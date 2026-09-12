@@ -1,6 +1,7 @@
 /*
 Accepts one 64-bit beat from upstream, stores it, and forwards it downstream using valid/ready handshaking.
 */
+`timescale 1ns/1ps
 
 module axis_register #(
     parameter int DATA_WIDTH = 64
