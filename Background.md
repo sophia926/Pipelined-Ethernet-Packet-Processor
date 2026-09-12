@@ -137,3 +137,4 @@ TCP is a transport layer protocol, and its minimum header is 20 bytes.
 **TCP flags**: Main ones are SYNC (establish/synchronize a connection), ACK (acknowledgement information is valid), FIN (gracefully close a connection), RST (reset/abort a connection), PSH (request prompt delivery of received data)
 **Data Offset**: Measured in 32-bit words. If data offset = 8, then the TCP header is 8x4 = 32-bytes long.
 **TCP Payload**: This is the data we're ultimately interested in.
+**Acknowledgement number**: 32-bit field in a TCP header that tells the sender the sequence number of the next byte of data the receiver expects to get
