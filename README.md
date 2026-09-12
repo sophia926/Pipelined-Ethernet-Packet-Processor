@@ -45,7 +45,7 @@ Connects the Ethernet, IPv4, TCP, and filtering stages into the complete streami
 └────────┬────────┘
          ▼
 ┌─────────────────┐
-│   TCP Parser    │ ──► Ports / Seq / Flags
+│   TCP Parser    │ ──► Ports / Sequence numbers / Flags
 └────────┬────────┘
          ▼
 ┌─────────────────┐
