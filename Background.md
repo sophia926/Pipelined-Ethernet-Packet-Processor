@@ -86,7 +86,7 @@ IPv4 is a 32-bit number that handles addressing between networks. The minimum IP
 
 ```text
 ┌──────────────────────────────────────────┐
-│ Version | IHL | ...                     │
+│ Version | IHL | ...                      │
 ├──────────────────────────────────────────┤
 │ Total Length                             │
 ├──────────────────────────────────────────┤
