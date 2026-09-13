@@ -8,11 +8,11 @@ def main():
     # Project directories
     # ============================================================
 
-    project_root = Path(__file__).resolve().parent.parent # this goes to the general folder (.parent goes to tb folder, .parent again goes to general folder)
+    project_root = Path(__file__).resolve().parent.parent
 
     rtl_dir = project_root / "rtl"
     tb_dir = project_root / "tb"
-    build_dir = project_root / "sim_build" / "axi"
+    build_dir = project_root / "sim_build" / "eth"
 
 
     # ============================================================
@@ -28,30 +28,30 @@ def main():
 
     runner.build(
         sources=[
-            rtl_dir / "axis_register.sv",
+            rtl_dir / "network_pkg.sv",
+            rtl_dir / "ethernet_parser.sv",
         ],
 
-        hdl_toplevel="axis_register", # top-level SystemVerilog module name
+        hdl_toplevel="ethernet_parser",
 
         build_dir=build_dir,
 
-        # Enable SystemVerilog
-        build_args=["-g2012"],
+        build_args=[
+            "-g2012"
+        ],
 
         always=True,
     )
 
 
     # ============================================================
-    # Run cocotb test
+    # Run cocotb tests
     # ============================================================
 
     runner.test(
-        hdl_toplevel="axis_register",
+        hdl_toplevel="ethernet_parser",
 
-        # This should match your Python test filename
-        # axis_register_test.py
-        test_module="axis_register_test", # run the Python module axis_register_test.py
+        test_module="ethernet_parser_test",
 
         build_dir=build_dir,
 

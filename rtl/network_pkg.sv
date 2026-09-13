@@ -2,6 +2,8 @@
 This file creates a SystemVerilog package containing definitions that can be shared across modules.
 */
 
+`timescale 1ns/1ps
+
 package network_pkg;
 
     // ============================================================
